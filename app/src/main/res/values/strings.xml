@@ -10,4 +10,5 @@
     <string name="water">Water</string>
     <string name="greeting">Nice to See You!</string>
     <string name="sub_greeting">Your plants need you today!</string>
+    <string name="search">Search ...</string>
 </resources>

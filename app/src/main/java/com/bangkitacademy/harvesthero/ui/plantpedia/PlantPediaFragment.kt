@@ -1,4 +1,4 @@
-package com.bangkitacademy.harvesthero.ui
+package com.bangkitacademy.harvesthero.ui.plantpedia
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -9,10 +9,6 @@ import android.view.ViewGroup
 import com.bangkitacademy.harvesthero.R
 
 class PlantPediaFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = PlantPediaFragment()
-    }
 
     private val viewModel: PlantPediaViewModel by viewModels()
 
@@ -27,5 +23,9 @@ class PlantPediaFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         return inflater.inflate(R.layout.fragment_plant_pedia, container, false)
+    }
+
+    companion object {
+        fun newInstance() = PlantPediaFragment()
     }
 }

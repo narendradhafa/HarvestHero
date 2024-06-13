@@ -11,6 +11,7 @@
         android:id="@+id/tabs_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +50,6 @@
         android:layout_marginBottom="24dp"
         android:clickable="true"
         android:focusable="true"
-        android:backgroundTint="?attr/colorPrimaryContainer"
         app:layout_constraintBottom_toTopOf="@+id/tabs_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/add" />

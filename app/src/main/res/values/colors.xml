@@ -3,6 +3,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="primary">#79C849</color>
+    <color name="primary">#448556</color>
+    <color name="primary_container">#CFE5B8</color>
+    <color name="on_primary_container">#FF000000</color>
+    <color name="on_primary_surface">#FF000000</color>
+    <color name="background">#FBFBF1</color>
+
+    <color name="water">#62A5D6</color>
+    <color name="sick">#D74C4C</color>
+    <color name="fertilize">#448556</color>
+    <color name="status_background">#FFFFFA</color>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.bangkitacademy.harvesthero.ui
+package com.bangkitacademy.harvesthero.ui.plantpedia
 
 import androidx.lifecycle.ViewModel
 

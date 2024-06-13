@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#79C849</color>
+    <color name="primary_container">#636D58</color>
+    <color name="on_primary_container">#E8F5E9</color>
+    <color name="on_primary_surface">#FFFFFFFF</color>
+    <color name="background">#1D1D1B</color>
+
+    <color name="water">#7EBCEA</color>
+    <color name="sick">#FF6767</color>
+    <color name="fertilize">#79C849</color>
+    <color name="status_background">#44413D</color>
+
+</resources>

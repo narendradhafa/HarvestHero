@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.bangkitacademy.harvesthero.ui.home.HomeFragment
 import com.bangkitacademy.harvesthero.ui.myplants.MyPlantsFragment
+import com.bangkitacademy.harvesthero.ui.plantpedia.PlantPediaFragment
 
 class SectionsPagerAdapter internal constructor(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
 

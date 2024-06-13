@@ -1,4 +1,4 @@
-package com.bangkitacademy.harvesthero.ui
+package com.bangkitacademy.harvesthero.ui.main
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.bangkitacademy.harvesthero.R
 import com.bangkitacademy.harvesthero.databinding.ActivityMainBinding
+import com.bangkitacademy.harvesthero.ui.SectionsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 

@@ -5,4 +5,9 @@
     <string name="tab_text_2">My Plants</string>
     <string name="tab_text_3">Plantpedia</string>
     <string name="tab_text_4">Profile</string>
+    <string name="fertilize">Fertilize</string>
+    <string name="sick">Sick</string>
+    <string name="water">Water</string>
+    <string name="greeting">Nice to See You!</string>
+    <string name="sub_greeting">Your plants need you today!</string>
 </resources>

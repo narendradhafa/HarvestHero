@@ -3,6 +3,8 @@ package com.bangkitacademy.harvesthero.ui
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.bangkitacademy.harvesthero.ui.home.HomeFragment
+import com.bangkitacademy.harvesthero.ui.myplants.MyPlantsFragment
 
 class SectionsPagerAdapter internal constructor(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
 
@@ -10,8 +12,8 @@ class SectionsPagerAdapter internal constructor(activity: AppCompatActivity) : F
         var fragment: Fragment? = null
         when (position) {
             0 -> fragment = HomeFragment()
-            1 -> fragment = HomeFragment()
-            2 -> fragment = HomeFragment()
+            1 -> fragment = MyPlantsFragment()
+            2 -> fragment = PlantPediaFragment()
         }
         return fragment as Fragment    }
 

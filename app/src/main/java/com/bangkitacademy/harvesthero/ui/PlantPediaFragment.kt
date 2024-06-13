@@ -8,13 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.bangkitacademy.harvesthero.R
 
-class HomeFragment : Fragment() {
+class PlantPediaFragment : Fragment() {
 
     companion object {
-        fun newInstance() = HomeFragment()
+        fun newInstance() = PlantPediaFragment()
     }
 
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: PlantPediaViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +26,6 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_plant_pedia, container, false)
     }
 }

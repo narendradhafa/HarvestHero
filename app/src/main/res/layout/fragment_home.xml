@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeFragment">
+    tools:context=".ui.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_home"
@@ -17,11 +17,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/greeting"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Nice to See You!" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_greeting_extra_home"
@@ -31,7 +32,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_greeting_home"
-            tools:text="Your plants need you today!" />
+            android:text="@string/sub_greeting" />
 
         <ImageView
             android:id="@+id/img_illust_home"
@@ -62,69 +63,72 @@
                 <ImageView
                     android:id="@+id/img_water_home"
                     android:layout_width="wrap_content"
-                    android:layout_height="64dp"
+                    android:layout_height="32dp"
                     android:layout_marginTop="12dp"
+                    android:src="@drawable/water"
                     app:layout_constraintEnd_toStartOf="@+id/img_sick_home"
                     app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@tools:sample/avatars" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/img_sick_home"
                     android:layout_width="wrap_content"
-                    android:layout_height="64dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginEnd="36dp"
+                    android:src="@drawable/sick"
                     app:layout_constraintEnd_toStartOf="@+id/img_fertilize_home"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/img_water_home"
-                    app:layout_constraintTop_toTopOf="@+id/img_water_home"
-                    tools:src="@tools:sample/avatars" />
+                    app:layout_constraintTop_toTopOf="@+id/img_water_home" />
 
                 <ImageView
                     android:id="@+id/img_fertilize_home"
                     android:layout_width="wrap_content"
-                    android:layout_height="64dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/fertilizer"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/img_sick_home"
-                    app:layout_constraintTop_toTopOf="@+id/img_sick_home"
-                    tools:src="@tools:sample/avatars" />
+                    app:layout_constraintTop_toTopOf="@+id/img_sick_home" />
 
                 <TextView
                     android:id="@+id/tv_water_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="3 Plant(s)"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/img_water_home"
                     app:layout_constraintStart_toStartOf="@+id/img_water_home"
-                    app:layout_constraintTop_toBottomOf="@+id/img_water_home"
-                    tools:text="3 Plant(s)" />
+                    app:layout_constraintTop_toBottomOf="@+id/img_water_home" />
 
                 <TextView
                     android:id="@+id/tv_sick_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="3 Plant(s)"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/img_sick_home"
                     app:layout_constraintStart_toStartOf="@+id/img_sick_home"
-                    app:layout_constraintTop_toBottomOf="@+id/img_sick_home"
-                    tools:text="3 Plant(s)" />
+                    app:layout_constraintTop_toBottomOf="@+id/img_sick_home" />
 
                 <TextView
                     android:id="@+id/tv_fertilize_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="3 Plant(s)"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/img_fertilize_home"
                     app:layout_constraintStart_toStartOf="@+id/img_fertilize_home"
-                    app:layout_constraintTop_toBottomOf="@+id/img_fertilize_home"
-                    tools:text="3 Plant(s)" />
+                    app:layout_constraintTop_toBottomOf="@+id/img_fertilize_home" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -156,25 +160,39 @@
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="Water" />
+                        android:text="@string/water" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="Sick" />
+                        android:text="@string/sick" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="Fertilize" />
+                        android:text="@string/fertilize" />
                 </com.google.android.material.tabs.TabLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_home"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_status_picker_home" />
+
+        <TextView
+            android:id="@+id/tv_no_plants_detected_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
+            tools:text="All your plants are hydrated"
+            android:visibility="gone"
+            tools:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

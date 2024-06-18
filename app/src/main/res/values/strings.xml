@@ -10,5 +10,9 @@
     <string name="water">Water</string>
     <string name="greeting">Nice to See You!</string>
     <string name="sub_greeting">Your plants need you today!</string>
-    <string name="search">Search ...</string>
+    <string name="search">Search …</string>
+    <string name="ed_name_hint">Plant Name</string>
+    <string name="add_this_plant">Add this plant</string>
+    <string name="choose_plant_type">Choose Plant Type</string>
+    <string name="choose_plant_current_growth">Choose Plant Current Growth</string>
 </resources>

@@ -1,44 +1,44 @@
-com.
-
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
-
-class PlantListAdapter(private val items: List<PlantList?>?) : RecyclerView.Adapter<PlantListAdapter.MyHolder>() {
-
-    //tunggu API untuk ??
-    var onItemClick: ((??) -> Unit)? = null
-
-    inner class MyHolder(itemView: View, context1: Context) : RecyclerView.ViewHolder(itemView) {
-        val imgPhoto: ImageView = itemView.findViewById(R.id.)
-        val tvName: TextView = itemView.findViewById(R.id.)
-        val context: Context = context1
-
-        init {
-            itemView.setOnClickListener {
-                onItemClick?.invoke(
-                    (items?.get(adapterPosition) ?: arrayListOf<??>()) as ??
-                )
-            }
-        }
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
-        val view: View =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_list_plant, parent, false)
-
-        return MyHolder(view, parent.context)
-    }
-
-    override fun onBindViewHolder(holder: MyHolder, position: Int) {
-
-    }
-
-    override fun getItemCount(): Int {
-        return items?.size ?: 0
-    }
-}
+package com.bangkitacademy.harvesthero.ui.myplants
+//
+//import android.content.Context
+//import android.view.LayoutInflater
+//import android.view.View
+//import android.view.ViewGroup
+//import android.widget.ImageView
+//import android.widget.TextView
+//import androidx.recyclerview.widget.RecyclerView
+//
+//class PlantListAdapter(private val items: List<PlantList?>?) : RecyclerView.Adapter<PlantListAdapter.MyHolder>() {
+//
+//    //tunggu API untuk ??
+//    var onItemClick: ((??) -> Unit)? = null
+//
+//    inner class MyHolder(itemView: View, context1: Context) : RecyclerView.ViewHolder(itemView) {
+//        val imgPhoto: ImageView = itemView.findViewById(R.id.)
+//        val tvName: TextView = itemView.findViewById(R.id.)
+//        val context: Context = context1
+//
+//        init {
+//            itemView.setOnClickListener {
+//                onItemClick?.invoke(
+//                    (items?.get(adapterPosition) ?: arrayListOf<??>()) as ??
+//                )
+//            }
+//        }
+//    }
+//
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
+//        val view: View =
+//            LayoutInflater.from(parent.context).inflate(R.layout.item_list_plant.xml, parent, false)
+//
+//        return MyHolder(view, parent.context)
+//    }
+//
+//    override fun onBindViewHolder(holder: MyHolder, position: Int) {
+//
+//    }
+//
+//    override fun getItemCount(): Int {
+//        return items?.size ?: 0
+//    }
+//}

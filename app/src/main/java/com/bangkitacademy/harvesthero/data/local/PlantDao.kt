@@ -1,11 +1,13 @@
 package com.bangkitacademy.harvesthero.data.local
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.bangkitacademy.harvesthero.data.local.entity.Plant
 
+@Dao
 interface PlantDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

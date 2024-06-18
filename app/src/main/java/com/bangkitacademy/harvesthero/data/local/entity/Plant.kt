@@ -17,6 +17,9 @@ data class Plant (
     @ColumnInfo(name = "plant_type")
     val plantType: String,
 
+    @ColumnInfo(name = "image_string")
+    val imageString: String,
+
     @ColumnInfo(name = "desc")
     val desc: String?,
 

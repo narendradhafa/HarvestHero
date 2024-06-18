@@ -1,5 +1,6 @@
 package com.bangkitacademy.harvesthero.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.DrawableRes
@@ -12,6 +13,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.bangkitacademy.harvesthero.R
 import com.bangkitacademy.harvesthero.databinding.ActivityMainBinding
 import com.bangkitacademy.harvesthero.ui.SectionsPagerAdapter
+import com.bangkitacademy.harvesthero.ui.add.AddActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -31,6 +33,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         setViewPager()
+        setupAction()
+    }
+
+    private fun setupAction() {
+        binding.apply {
+            floatingBtnMain.setOnClickListener{
+                val intent = Intent(this@MainActivity, AddActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 
     private fun setViewPager() {
@@ -43,6 +55,8 @@ class MainActivity : AppCompatActivity() {
             tab.icon = ContextCompat.getDrawable(this, TAB_ICON[position])
         }.attach()
     }
+
+
 
     companion object {
         @StringRes

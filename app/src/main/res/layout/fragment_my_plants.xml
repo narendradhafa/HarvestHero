@@ -11,51 +11,68 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.search.SearchBar
-            android:id="@+id/search_bar_my_plants"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/status_background"
-            android:elevation="10dp"
-            android:hint="@string/search"
-            app:strokeColor="@color/primary_container"
-            app:strokeWidth="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_my_plants" />
-
         <TextView
             android:id="@+id/tv_title_my_plants"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-black"
             android:text="My Plants"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintBottom_toBottomOf="@+id/img_ilust_my_plants"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/img_ilust_my_plants"
-            android:layout_width="wrap_content"
-            android:layout_height="128dp"
-            android:layout_marginTop="32dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
+            android:src="@drawable/harveypeek"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_my_plants"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_bar_my_plants" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            app:cardBackgroundColor="@color/background"
+            app:cardElevation="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/img_ilust_my_plants">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.search.SearchBar
+                    android:id="@+id/search_bar_my_plants"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="@color/status_background"
+                    android:hint="@string/search"
+                    app:layout_constraintBottom_toTopOf="@+id/rv_my_plants"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:strokeColor="@color/primary_container"
+                    app:strokeWidth="2dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_my_plants"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/search_bar_my_plants" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

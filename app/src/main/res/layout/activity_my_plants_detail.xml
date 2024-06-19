@@ -46,7 +46,7 @@
                         android:layout_width="350dp"
                         android:layout_height="350dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/img_place_holder"
+                        android:src="@drawable/photo_album"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

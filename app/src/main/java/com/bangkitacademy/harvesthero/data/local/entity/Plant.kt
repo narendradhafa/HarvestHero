@@ -18,13 +18,13 @@ data class Plant (
     val plantType: String,
 
     @ColumnInfo(name = "image_string")
-    val imageString: String,
+    val imageString: String?,
 
     @ColumnInfo(name = "desc")
     val desc: String?,
 
     @ColumnInfo(name = "current_growth")
-    val currentGrowth: Boolean?,
+    val currentGrowth: String,
 
     @ColumnInfo(name = "time_to_growth")
     val timeToGrowth: Int?,

@@ -7,10 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bangkitacademy.harvesthero.databinding.FragmentMyPlantsBinding
+import com.bangkitacademy.harvesthero.ui.ViewModelFactory
 
 class MyPlantsFragment : Fragment() {
 
-    private val viewModel: MyPlantsViewModel by viewModels()
+    private val viewModel by viewModels<MyPlantsViewModel> {
+        ViewModelFactory.getInstance(requireActivity().application)
+    }
     private lateinit var binding: FragmentMyPlantsBinding
 
     override fun onCreateView(

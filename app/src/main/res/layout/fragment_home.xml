@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/img_illust_home"
@@ -199,7 +199,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_home"
                     android:layout_width="0dp"
-                    android:layout_height="0dp"
+                    android:layout_height="512dp"
                     android:layout_marginTop="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

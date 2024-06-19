@@ -1,17 +1,19 @@
 package com.bangkitacademy.harvesthero.ui.home
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bangkitacademy.harvesthero.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.bangkitacademy.harvesthero.databinding.FragmentHomeBinding
+import com.bangkitacademy.harvesthero.ui.ViewModelFactory
 
 class HomeFragment : Fragment() {
 
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel by viewModels<HomeViewModel> {
+        ViewModelFactory.getInstance(requireActivity().application)
+    }
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(

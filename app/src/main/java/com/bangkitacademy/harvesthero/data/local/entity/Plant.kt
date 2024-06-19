@@ -40,4 +40,7 @@ data class Plant (
 
     @ColumnInfo(name = "time_to_fertilize")
     val timeToFertilize: Int?,
+
+    @ColumnInfo(name = "is_sick")
+    val isSick: Boolean?,
 )

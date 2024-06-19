@@ -15,4 +15,11 @@
     <string name="add_this_plant">Add this plant</string>
     <string name="choose_plant_type">Choose Plant Type</string>
     <string name="choose_plant_current_growth">Choose Plant Current Growth</string>
+    <string name="status">Status</string>
+    <string name="check_growth_phase">Check growth phase</string>
+    <string name="last_fertilized">Last Fertilized</string>
+    <string name="water_plant">Water plant</string>
+    <string name="last_watered">Last Watered</string>
+    <string name="plant_health">Plant Health</string>
+    <string name="image_of_your_plant">Image of Your Plant</string>
 </resources>

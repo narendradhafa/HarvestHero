@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailActivity">
+
+    <ImageView
+        android:id="@+id/img_plant_detail"
+        android:layout_width="0dp"
+        android:layout_height="256dp"
+        android:contentDescription="@string/image_of_your_plant"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_plant_name_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_plant_detail"
+        tools:text="Plant Name" />
+
+    <TextView
+        android:id="@+id/tv_plant_type_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintStart_toStartOf="@+id/tv_plant_name_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_plant_name_detail"
+        tools:text="PlantType" />
+
+    <TextView
+        android:id="@+id/tv_status_title_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/tv_growth_phase_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_growth_phase_detail"
+        android:text="@string/status" />
+
+    <TextView
+        android:id="@+id/tv_health_title_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="@+id/tv_status_title_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_status_title_detail"
+        android:text="@string/plant_health" />
+
+    <TextView
+        android:id="@+id/tv_health_time_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        app:layout_constraintStart_toStartOf="@+id/tv_health_title_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_health_title_detail"
+        tools:text="Healthy" />
+
+    <TextView
+        android:id="@+id/tv_water_title_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="@+id/tv_health_time_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_health_time_detail"
+        android:text="@string/last_watered" />
+
+    <TextView
+        android:id="@+id/tv_water_time_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        app:layout_constraintStart_toStartOf="@+id/tv_water_title_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_water_title_detail"
+        tools:text="3 Days ago" />
+
+    <Button
+        android:id="@+id/btn_water_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/water"
+        app:icon="@drawable/water"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_water_time_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_water_title_detail"
+        app:layout_constraintVertical_bias="1.0"
+        android:text="@string/water_plant" />
+
+    <TextView
+        android:id="@+id/tv_fertilize_title_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="@+id/tv_water_time_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_water_time_detail"
+        android:text="@string/last_fertilized" />
+
+    <TextView
+        android:id="@+id/tv_fertilize_time_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        app:layout_constraintStart_toStartOf="@+id/tv_fertilize_title_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fertilize_title_detail"
+        tools:text="3 Days ago" />
+
+    <Button
+        android:id="@+id/btn_fertilize_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:icon="@drawable/fertilizer"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_fertilize_time_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_water_detail"
+        app:layout_constraintTop_toTopOf="@+id/tv_fertilize_title_detail"
+        app:layout_constraintVertical_bias="1.0"
+        android:text="@string/fertilize" />
+
+    <Button
+        android:id="@+id/btn_check_growth_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:icon="@drawable/photo_album"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/check_growth_phase" />
+
+    <TextView
+        android:id="@+id/tv_growth_phase_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_plant_type_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_plant_type_detail"
+        tools:text="Seed" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

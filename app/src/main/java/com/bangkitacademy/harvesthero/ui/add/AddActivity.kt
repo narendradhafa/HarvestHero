@@ -1,5 +1,6 @@
 package com.bangkitacademy.harvesthero.ui.add
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -8,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bangkitacademy.harvesthero.R
 import com.bangkitacademy.harvesthero.databinding.ActivityAddBinding
+import com.bangkitacademy.harvesthero.ui.detail.DetailActivity
 import com.google.android.material.chip.Chip
 
 class AddActivity : AppCompatActivity() {
@@ -40,7 +42,12 @@ class AddActivity : AppCompatActivity() {
 
             // Get plant type additional data from API and add it to local database
             btnAdd.setOnClickListener{
+                val intent = Intent(this@AddActivity, DetailActivity::class.java)
 
+                setData()
+
+                startActivity(intent)
+                finish()
             }
         }
     }
@@ -57,5 +64,9 @@ class AddActivity : AppCompatActivity() {
             }
             binding.chipGroupAdd.addView(chip)
         }
+    }
+
+    private fun setData() {
+
     }
 }

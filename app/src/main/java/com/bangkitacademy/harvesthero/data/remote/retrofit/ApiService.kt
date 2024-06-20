@@ -1,3 +1,9 @@
 package com.bangkitacademy.harvesthero.data.remote.retrofit
 
-interface ApiService
+import retrofit2.http.GET
+
+interface ApiService {
+
+    @GET("plants")
+    suspend fun getAllPlants()
+}

@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import com.bangkitacademy.harvesthero.data.local.PlantDao
 import com.bangkitacademy.harvesthero.data.local.PlantDatabase
 import com.bangkitacademy.harvesthero.data.local.entity.Plant
+import com.bangkitacademy.harvesthero.data.remote.retrofit.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.util.concurrent.ExecutorService

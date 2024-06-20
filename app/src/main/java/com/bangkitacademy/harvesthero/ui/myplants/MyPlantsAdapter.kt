@@ -1,5 +1,6 @@
 package com.bangkitacademy.harvesthero.ui.myplants
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -8,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bangkitacademy.harvesthero.data.local.entity.Plant
 import com.bangkitacademy.harvesthero.databinding.ItemListPlantBinding
 
-class MyPlantsAdapter : ListAdapter<Plant, MyPlantsAdapter.MyPlantsViewHolder>(DIFF_CALLBACK) {
+class MyPlantsAdapter(private val onItemClick: (Plant) -> Unit) : ListAdapter<Plant, MyPlantsAdapter.MyPlantsViewHolder>(DIFF_CALLBACK) {
 
     private val listPlant = ArrayList<Plant>()
 
@@ -27,11 +28,16 @@ class MyPlantsAdapter : ListAdapter<Plant, MyPlantsAdapter.MyPlantsViewHolder>(D
 
     inner class MyPlantsViewHolder(private val binding: ItemListPlantBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(plant: Plant) {
-            with(binding) {
+            binding.apply {
                 tvNameItemMyplants.text = plant.plantName
                 tvTypeItemMyplants.text = plant.plantType
                 tvGrowthItemMyplants.text = plant.currentGrowth
+
+                root.setOnClickListener {
+                    onItemClick.invoke(plant)
+                }
             }
+            Log.d("MyPlantsAdapter", "Binding plant: ${plant.plantName}")
         }
     }
 

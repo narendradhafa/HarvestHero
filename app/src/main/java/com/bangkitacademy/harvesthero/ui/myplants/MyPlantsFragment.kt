@@ -1,14 +1,18 @@
 package com.bangkitacademy.harvesthero.ui.myplants
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bangkitacademy.harvesthero.data.local.entity.Plant
 import com.bangkitacademy.harvesthero.databinding.FragmentMyPlantsBinding
 import com.bangkitacademy.harvesthero.ui.ViewModelFactory
+import com.bangkitacademy.harvesthero.ui.detail.DetailActivity
 
 class MyPlantsFragment : Fragment() {
 
@@ -16,7 +20,7 @@ class MyPlantsFragment : Fragment() {
         ViewModelFactory.getInstance(requireActivity().application)
     }
     private lateinit var binding: FragmentMyPlantsBinding
-    private lateinit var adapter: MyPlantsAdapter
+    private lateinit var myPlantsAdapter: MyPlantsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,16 +32,36 @@ class MyPlantsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d("MyPlantsFragment", "onViewCreated called")
 
-        adapter = MyPlantsAdapter()
-        binding.rvMyPlants.layoutManager = LinearLayoutManager(requireContext())
-        binding.rvMyPlants.adapter = adapter
+        myPlantsAdapter = MyPlantsAdapter { selectedPlant -> onItemClick(selectedPlant) }
 
-        viewModel.plants.observe(viewLifecycleOwner) { plants ->
-            plants?.let {
-                adapter.submitList(it)
-            }
+        setupRecyclerView()
+        observeViewModel()
+    }
+
+    private fun setupRecyclerView() {
+        binding.rvMyPlants.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = myPlantsAdapter
         }
+    }
+
+    private fun observeViewModel() {
+        viewModel.plants.observe(viewLifecycleOwner) { plants ->
+            Log.d("MyPlantsFragment", "Received plants: ${plants.size}")
+            myPlantsAdapter.submitList(plants)
+        }
+    }
+
+    private fun onItemClick(plant: Plant) {
+        navigateToDetailScreen(plant.id)
+    }
+
+    private fun navigateToDetailScreen(plantId: Int) {
+        val intent = Intent(requireContext(), DetailActivity::class.java)
+        intent.putExtra("PLANT_ID", plantId)
+        startActivity(intent)
     }
 
     companion object {

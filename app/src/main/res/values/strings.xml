@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">Harvest Hero</string>
 
-    <string name="tab_text_1">Home</string>
-    <string name="tab_text_2">My Plants</string>
-    <string name="tab_text_3">Plantpedia</string>
-    <string name="tab_text_4">Profile</string>
+    <string name="home">Home</string>
+    <string name="my_plants">My Plants</string>
+    <string name="plantpedia">Plantpedia</string>
     <string name="fertilize">Fertilize</string>
     <string name="sick">Sick</string>
     <string name="water">Water</string>

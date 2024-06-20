@@ -11,19 +11,13 @@ import com.bangkitacademy.harvesthero.databinding.ItemListPlantBinding
 
 class MyPlantsAdapter(private val onItemClick: (Plant) -> Unit) : ListAdapter<Plant, MyPlantsAdapter.MyPlantsViewHolder>(DIFF_CALLBACK) {
 
-    private val listPlant = ArrayList<Plant>()
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyPlantsViewHolder {
         val binding = ItemListPlantBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyPlantsViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: MyPlantsViewHolder, position: Int) {
-        holder.bind(listPlant[position])
-    }
-
-    override fun getItemCount(): Int {
-        return listPlant.size
+        holder.bind(getItem(position))
     }
 
     inner class MyPlantsViewHolder(private val binding: ItemListPlantBinding) : RecyclerView.ViewHolder(binding.root) {

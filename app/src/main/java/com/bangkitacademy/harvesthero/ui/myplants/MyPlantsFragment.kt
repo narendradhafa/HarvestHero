@@ -44,6 +44,7 @@ class MyPlantsFragment : Fragment() {
         binding.rvMyPlants.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = myPlantsAdapter
+            Log.d("MyPlantsFragment", "Adapter set: ${adapter != null}")
         }
     }
 

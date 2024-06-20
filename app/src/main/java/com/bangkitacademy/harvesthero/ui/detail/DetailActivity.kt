@@ -11,6 +11,7 @@ import com.bangkitacademy.harvesthero.R
 import com.bangkitacademy.harvesthero.data.local.entity.Plant
 import com.bangkitacademy.harvesthero.databinding.ActivityDetailBinding
 import com.bangkitacademy.harvesthero.ui.ViewModelFactory
+import com.bangkitacademy.harvesthero.ui.checkgrowth.CheckGrowthActivity
 import com.bangkitacademy.harvesthero.ui.main.MainActivity
 
 class DetailActivity : AppCompatActivity() {
@@ -20,6 +21,8 @@ class DetailActivity : AppCompatActivity() {
     }
     private lateinit var binding: ActivityDetailBinding
     private var currentPlant: Plant? = null
+    private var plantId: Int = -1
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +35,7 @@ class DetailActivity : AppCompatActivity() {
             insets
         }
 
-        val plantId = intent.getIntExtra("PLANT_ID", -1)
+        plantId = intent.getIntExtra("PLANT_ID", -1)
         if (plantId != -1) {
             viewModel.get(plantId).observe(this) { plant ->
                 plant?.let {
@@ -68,7 +71,9 @@ class DetailActivity : AppCompatActivity() {
             }
 
             btnCheckGrowthDetail.setOnClickListener {
-
+                val intent = Intent(this@DetailActivity, CheckGrowthActivity::class.java)
+                intent.putExtra("PLANT_CURRENT_GROWTH", currentPlant?.currentGrowth)
+                startActivity(intent)
             }
 
             btnDeleteDetail.setOnClickListener {

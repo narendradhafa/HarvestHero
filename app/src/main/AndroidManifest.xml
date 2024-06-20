@@ -21,6 +21,9 @@
         android:theme="@style/Theme.HarvestHero"
         tools:targetApi="31">
         <activity
+            android:name=".ui.checkgrowth.CheckGrowthActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.detail.DetailActivity"
             android:exported="false" />
         <activity

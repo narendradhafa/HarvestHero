@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.checkgrowth.CheckGrowthActivity">
+
+    <Button
+        android:id="@+id/btn_check_growth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="Pick plant image from gallery"
+        app:icon="@drawable/photo_album"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_check_growth"
+        android:layout_width="0dp"
+        android:layout_height="384dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_add_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_title_current_growth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Current Growth"
+        app:layout_constraintStart_toStartOf="@+id/img_check_growth"
+        app:layout_constraintTop_toBottomOf="@+id/img_check_growth" />
+
+    <TextView
+        android:id="@+id/tv_checked_current_growth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_current_growth"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_current_growth" />
+</androidx.constraintlayout.widget.ConstraintLayout>

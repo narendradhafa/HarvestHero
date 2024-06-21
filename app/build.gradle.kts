@@ -26,7 +26,7 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "BASE_URL", "\"https://example.com/\"")
+            buildConfigField("String", "BASE_URL", "\"https://project-harvestedu.et.r.appspot.com/api/\"")
         }
         release {
             isMinifyEnabled = false
@@ -34,7 +34,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"https://example.com/\"")
+            buildConfigField("String", "BASE_URL", "\"https://project-harvestedu.et.r.appspot.com/api/\"")
         }
     }
     compileOptions {

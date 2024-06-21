@@ -54,9 +54,16 @@ class DetailActivity : AppCompatActivity() {
             tvPlantNameDetail.text = plant.plantName.toString()
             tvPlantTypeDetail.text = plant.plantType
             tvGrowthPhaseDetail.text = plant.currentGrowth
-            tvHealthTimeDetail.text = if (plant.isSick == true) "Sick" else "Healthy"
-            tvWaterTimeDetail.text = if (plant.isWatered == true) "Watered" else "Not Yet"
-            tvFertilizeTimeDetail.text = if (plant.isFertilized == true) "Fertilized" else "Not Yet"
+            tvHealthTimeDetail.text = if (plant.isSick == true) {
+                getString(R.string.sick)
+            } else getString(R.string.healthy)
+            tvWaterTimeDetail.text = if (plant.isWatered == true) {
+                getString(R.string.watered)
+            } else getString(R.string.not_yet)
+            tvFertilizeTimeDetail.text = if (plant.isFertilized == true) {
+                getString(R.string.fertilized)
+            } else getString(R.string.not_yet
+            )
 
             btnWaterDetail.visibility = if (plant.isWatered == true) View.GONE else View.VISIBLE
             btnFertilizeDetail.visibility = if (plant.isFertilized == true) View.GONE else View.VISIBLE
@@ -69,13 +76,13 @@ class DetailActivity : AppCompatActivity() {
             btnWaterDetail.setOnClickListener {
                 currentPlant?.let { viewModel.waterPlant(it.id) }
                 btnWaterDetail.visibility = View.GONE
-                tvWaterTimeDetail.text = "Watered"
+                tvWaterTimeDetail.text = getString(R.string.watered)
             }
 
             btnFertilizeDetail.setOnClickListener {
                 currentPlant?.let { viewModel.fertilizePlant(it.id) }
                 btnFertilizeDetail.visibility = View.GONE
-                tvFertilizeTimeDetail.text = "Fertilized"
+                tvFertilizeTimeDetail.text = getString(R.string.fertilized)
             }
 
             btnCheckGrowthDetail.setOnClickListener {

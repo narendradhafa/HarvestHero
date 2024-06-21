@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import com.bangkitacademy.harvesthero.R
 import com.bangkitacademy.harvesthero.databinding.FragmentHomeBinding
 import com.bangkitacademy.harvesthero.ui.ViewModelFactory
 
@@ -22,6 +24,44 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setAction()
+    }
+
+    private fun setAction() {
+        binding.apply {
+            viewModel.wateredPlantsCount.observe(viewLifecycleOwner) { count ->
+                val wateredText = if (count == 1) {
+                    getString(R.string.plant_singular, count)
+                } else {
+                    getString(R.string.plant_plural, count)
+                }
+                tvWaterHome.text = wateredText
+            }
+
+            viewModel.sickPlantsCount.observe(viewLifecycleOwner) { count ->
+                val sickText = if (count == 1) {
+                    getString(R.string.plant_singular, count)
+                } else {
+                    getString(R.string.plant_plural, count)
+                }
+                tvSickHome.text = sickText
+            }
+
+            viewModel.fertilizedPlantsCount.observe(viewLifecycleOwner) { count ->
+                val fertilizedText = if (count == 1) {
+                    getString(R.string.plant_singular, count)
+                } else {
+                    getString(R.string.plant_plural, count)
+                }
+                tvFertilizeHome.text = fertilizedText
+            }
+        }
+
     }
 
     companion object {

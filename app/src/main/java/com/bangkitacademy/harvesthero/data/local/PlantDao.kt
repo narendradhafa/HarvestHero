@@ -6,7 +6,6 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Update
 import com.bangkitacademy.harvesthero.data.local.entity.Plant
 
 @Dao
@@ -23,6 +22,15 @@ interface PlantDao {
 
     @Query("SELECT * FROM plant ORDER BY id ASC")
     fun getAll(): LiveData<List<Plant>>
+
+    @Query("SELECT COUNT(*) FROM plant WHERE is_watered = 0")
+    suspend fun countNotWateredPlants(): Int
+
+    @Query("SELECT COUNT(*) FROM plant WHERE is_sick = 1")
+    suspend fun countNotSickPlants(): Int
+
+    @Query("SELECT COUNT(*) FROM plant WHERE is_fertilized = 0")
+    suspend fun countNotFertilizedPlants(): Int
 
     @Query("SELECT * FROM plant")
     suspend fun getAllPlantsList(): List<Plant>  // New method to return a list directly

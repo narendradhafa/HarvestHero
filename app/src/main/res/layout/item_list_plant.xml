@@ -24,7 +24,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@color/primary_container" />
+            android:src="@drawable/homeillust" />
 
         <TextView
             android:id="@+id/tv_name_item_myplants"

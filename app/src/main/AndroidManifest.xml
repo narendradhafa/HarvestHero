@@ -21,6 +21,12 @@
         android:theme="@style/Theme.HarvestHero"
         tools:targetApi="31">
         <activity
+            android:name=".ui.add.AddPlantSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.pediadetail.PediaDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.checkgrowth.CheckGrowthActivity"
             android:exported="false" />
         <activity

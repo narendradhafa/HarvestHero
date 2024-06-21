@@ -31,6 +31,7 @@ class ViewModelFactory(
             modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
                 DetailViewModel(mApplication) as T
             }
+
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

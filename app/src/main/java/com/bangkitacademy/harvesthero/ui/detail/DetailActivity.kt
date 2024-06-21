@@ -2,6 +2,7 @@ package com.bangkitacademy.harvesthero.ui.detail
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -56,6 +57,9 @@ class DetailActivity : AppCompatActivity() {
             tvHealthTimeDetail.text = if (plant.isSick == true) "Sick" else "Healthy"
             tvWaterTimeDetail.text = if (plant.isWatered == true) "Watered" else "Not Yet"
             tvFertilizeTimeDetail.text = if (plant.isFertilized == true) "Fertilized" else "Not Yet"
+
+            btnWaterDetail.visibility = if (plant.isWatered == true) View.GONE else View.VISIBLE
+            btnFertilizeDetail.visibility = if (plant.isFertilized == true) View.GONE else View.VISIBLE
         }
     }
 
@@ -63,11 +67,15 @@ class DetailActivity : AppCompatActivity() {
         binding.apply {
 
             btnWaterDetail.setOnClickListener {
-
+                currentPlant?.let { viewModel.waterPlant(it.id) }
+                btnWaterDetail.visibility = View.GONE
+                tvWaterTimeDetail.text = "Watered"
             }
 
             btnFertilizeDetail.setOnClickListener {
-
+                currentPlant?.let { viewModel.fertilizePlant(it.id) }
+                btnFertilizeDetail.visibility = View.GONE
+                tvFertilizeTimeDetail.text = "Fertilized"
             }
 
             btnCheckGrowthDetail.setOnClickListener {

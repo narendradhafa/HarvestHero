@@ -85,7 +85,7 @@ class AddActivity : AppCompatActivity() {
             desc = "Description from API",  // Fetch this from API
             currentGrowth = currentGrowth,
             timeToGrowth = 90,  // Example value, fetch this from API if needed
-            isWatered = true,  // Example value
+            isWatered = false,  // Example value
             timeToWater = 24,  // Example value
             isFertilized = false,  // Example value
             timeToFertilize = 30,  // Example value

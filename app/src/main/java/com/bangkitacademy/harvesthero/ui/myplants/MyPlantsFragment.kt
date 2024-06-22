@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkitacademy.harvesthero.data.local.entity.Plant
 import com.bangkitacademy.harvesthero.databinding.FragmentMyPlantsBinding
 import com.bangkitacademy.harvesthero.ui.ViewModelFactory
+import com.bangkitacademy.harvesthero.ui.add.AddActivity
 import com.bangkitacademy.harvesthero.ui.detail.DetailActivity
 
 class MyPlantsFragment : Fragment() {
@@ -38,6 +39,16 @@ class MyPlantsFragment : Fragment() {
 
         setupRecyclerView()
         observeViewModel()
+        setupAction()
+    }
+
+    private fun setupAction() {
+        binding.apply {
+            floatingBtnMain.setOnClickListener {
+                val intent = Intent(requireActivity(), AddActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 
     private fun setupRecyclerView() {

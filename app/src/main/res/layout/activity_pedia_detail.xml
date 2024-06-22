@@ -23,13 +23,28 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/hhlogo" />
+                tools:src="@drawable/hhicon" />
+
+            <Button
+                android:id="@+id/btn_back_pedia"
+                style="?attr/materialIconButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/background"
+                android:drawableTint="#000151"
+                app:icon="@drawable/back"
+                app:iconSize="35dp"
+                app:iconTint="#151C51"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_pediadetail_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/background"
+                app:cardBackgroundColor="@color/card_rv_background"
                 app:layout_constraintTop_toBottomOf="@+id/img_pediadetail_plant">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -41,8 +56,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
+                        android:fontFamily="@font/gabarito_bold"
                         android:text="Arabidhopsis Thaliana"
-                        android:textSize="30sp"
+                        android:textSize="28sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -56,20 +72,24 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
                         android:text="@string/add_this_plant"
+                        app:icon="@drawable/add"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_pediadetail_name" />
+                        app:layout_constraintTop_toBottomOf="@+id/card_pediadetail_water" />
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/card_pediadetail_water"
-                        android:layout_width="180dp"
-                        android:layout_height="100dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        app:cardBackgroundColor="#DFEDFD"
                         app:cardCornerRadius="10dp"
-                        app:cardElevation="2dp"
-                        app:layout_constraintEnd_toStartOf="@id/card_pediadetail_fert"
+                        app:cardElevation="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/btn_pediadetail_add">
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pediadetail_name">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -79,170 +99,165 @@
                                 android:id="@+id/img_water_pedia"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:layout_marginTop="16dp"
                                 android:src="@drawable/water"
-                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/materialDivider"
+                                app:layout_constraintHorizontal_bias="0.1"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_pediadetail_water"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:fontFamily="@font/gabarito_regular"
+                                android:text="Water"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/img_water_pedia"
+                                app:layout_constraintTop_toTopOf="@+id/img_water_pedia" />
 
                             <TextView
                                 android:id="@+id/tv_pediadetail_waterdays"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginStart="8dp"
+                                android:fontFamily="@font/gabarito_regular"
                                 android:text="Every 3 days"
                                 android:textColor="@color/water"
-                                android:textSize="20sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/img_water_pedia"
+                                app:layout_constraintStart_toEndOf="@+id/img_water_pedia"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_pediadetail_water" />
+
+                            <com.google.android.material.divider.MaterialDivider
+                                android:id="@+id/materialDivider"
+                                android:layout_width="2dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="vertical"
+                                app:dividerColor="#AEBBC1"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/img_water_pedia" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/card_pediadetail_growtime"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="16dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="3dp"
-                        app:layout_constraintEnd_toStartOf="@id/card_pediadetail_fert"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/card_pediadetail_water">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/tv_pediadetail_growtime"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginTop="16dp"
-                                android:text="Grow time"
-                                android:textSize="25sp"
-                                android:textStyle="bold"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.0"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
-                            <TextView
-                                android:id="@+id/tv_pediadetail_growtimeinfo"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginBottom="16dp"
-                                android:text="Lorem ipsum dolor sit amet"
-                                android:textSize="16sp"
-                                android:textStyle="normal"
+                            <ImageView
+                                android:id="@+id/img_fertilize_pedia"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/fertilizer"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.0"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/tv_pediadetail_growtime" />
+                                app:layout_constraintHorizontal_bias="0.1"
+                                app:layout_constraintStart_toEndOf="@+id/materialDivider"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_pediadetail_fert"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:fontFamily="@font/gabarito_regular"
+                                android:text="Fertilize"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/img_fertilize_pedia"
+                                app:layout_constraintTop_toTopOf="@+id/img_fertilize_pedia" />
+
+                            <TextView
+                                android:id="@+id/tv_pediadetail_fertdays"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:fontFamily="@font/gabarito_regular"
+                                android:text="Every 3 days"
+                                android:textColor="@color/fertilize"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/img_fertilize_pedia"
+                                app:layout_constraintStart_toEndOf="@+id/img_fertilize_pedia"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_pediadetail_fert" />
+
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/card_pediadetail_fert"
-                        android:layout_width="180dp"
-                        android:layout_height="100dp"
-                        app:cardElevation="2dp"
-                        app:cardCornerRadius="10dp"
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/divider_pedia"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="24dp"
+                        app:dividerColor="#D5D5D5"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/card_pediadetail_water"
-                        app:layout_constraintTop_toTopOf="@+id/card_pediadetail_water">
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_pediadetail_add" />
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/tv_pediadetail_growtime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/gabarito_bold"
+                        android:text="Grow time"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider_pedia" />
 
-                        <ImageView
-                            android:id="@+id/img_fertilize_pedia"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_marginTop="16dp"
-                            android:src="@drawable/fertilizer"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/tv_pediadetail_growtimeinfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/gabarito_regular"
+                        android:text="Lorem ipsum dolor sit amet"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pediadetail_growtime" />
 
-                        <TextView
-                            android:id="@+id/tv_pediadetail_fertdays"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Every 3 days"
-                            android:textColor="@color/fertilize"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/img_fertilize_pedia" />
+                    <TextView
+                        android:id="@+id/tv_pediadetail_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/gabarito_bold"
+                        android:text="Desription"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pediadetail_growtimeinfo" />
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/card_pediadetail_desc"
+                    <TextView
+                        android:id="@+id/tv_pediadetail_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="24dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/primary_container"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/gabarito_regular"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non libero non diam dictum tincidunt. Nam elementum felis ac ex hendrerit ultrices. Phasellus et hendrerit ex, nec molestie quam. Mauris non elit nibh. Ut molestie ante eu leo tincidunt, eget rutrum tellus auctor. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quam ligula, consequat sit amet ligula in, faucibus lobortis eros. In mattis risus sed enim ultricies, nec consectetur nisi tempus. Aenean congue pulvinar elit condimentum euismod. Ut pulvinar nunc eget odio porttitor tempus. Aenean molestie sem eu felis pretium elementum."
+                        android:textSize="16sp"
+                        android:textStyle="normal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/card_pediadetail_growtime">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/tv_pediadetail_desc"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginTop="16dp"
-                                android:text="Desription"
-                                android:textSize="25sp"
-                                android:textStyle="bold"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:id="@+id/tv_pediadetail_description"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginEnd="16dp"
-                                android:layout_marginBottom="16dp"
-                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non libero non diam dictum tincidunt. Nam elementum felis ac ex hendrerit ultrices. Phasellus et hendrerit ex, nec molestie quam. Mauris non elit nibh. Ut molestie ante eu leo tincidunt, eget rutrum tellus auctor. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quam ligula, consequat sit amet ligula in, faucibus lobortis eros. In mattis risus sed enim ultricies, nec consectetur nisi tempus. Aenean congue pulvinar elit condimentum euismod. Ut pulvinar nunc eget odio porttitor tempus. Aenean molestie sem eu felis pretium elementum."
-                                android:textSize="16sp"
-                                android:textStyle="normal"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/tv_pediadetail_desc" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    </androidx.cardview.widget.CardView>
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pediadetail_desc" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

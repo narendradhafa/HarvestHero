@@ -37,12 +37,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupAction() {
-        binding.apply {
-            floatingBtnMain.setOnClickListener{
-                val intent = Intent(this@MainActivity, AddActivity::class.java)
-                startActivity(intent)
-            }
-        }
+
     }
 
     private fun setViewPager() {

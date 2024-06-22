@@ -3,11 +3,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="primary">#448556</color>
-    <color name="primary_container">#CFE5B8</color>
-    <color name="on_primary_container">#FF000000</color>
+    <color name="primary">#22B1ED</color>
+    <color name="primary_container">#BAF4FF</color>
+    <color name="on_primary_container">#FFFFFF</color>
     <color name="on_primary_surface">#FF000000</color>
-    <color name="background">#FBFBF1</color>
+    <color name="background">#F6F6F6</color>
+    <color name="card_rv_background">#FFFFFF</color>
+    <color name="Text">#151C51</color>
+    <color name="TextLight">#737797</color>
+    <color name="secondary_containera">#DCE9FD</color>
+    <color name ="bright_blue">#22B1ED</color>
 
     <color name="water">#62A5D6</color>
     <color name="sick">#D74C4C</color>

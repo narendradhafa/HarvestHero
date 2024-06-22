@@ -1,5 +1,6 @@
 package com.bangkitacademy.harvesthero.ui.checkgrowth
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +13,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.bangkitacademy.harvesthero.R
 import com.bangkitacademy.harvesthero.databinding.ActivityCheckGrowthBinding
 import com.bangkitacademy.harvesthero.helper.ImageClassifierHelper
+import com.bangkitacademy.harvesthero.ui.detail.DetailActivity
+import com.bangkitacademy.harvesthero.ui.myplants.MyPlantsFragment
 
 class CheckGrowthActivity : AppCompatActivity(), ImageClassifierHelper.ClassifierListener {
 

@@ -12,8 +12,10 @@ import com.bangkitacademy.harvesthero.R
 import com.bangkitacademy.harvesthero.data.local.entity.Plant
 import com.bangkitacademy.harvesthero.databinding.ActivityDetailBinding
 import com.bangkitacademy.harvesthero.ui.ViewModelFactory
+import com.bangkitacademy.harvesthero.ui.add.AddActivity
 import com.bangkitacademy.harvesthero.ui.checkgrowth.CheckGrowthActivity
 import com.bangkitacademy.harvesthero.ui.main.MainActivity
+import com.bangkitacademy.harvesthero.ui.myplants.MyPlantsFragment
 
 class DetailActivity : AppCompatActivity() {
 
@@ -47,6 +49,17 @@ class DetailActivity : AppCompatActivity() {
         }
 
         setAction()
+        setupAction()
+    }
+
+    private fun setupAction() {
+        binding.apply {
+            btnBackDetail.setOnClickListener {
+                val intent = Intent(this@DetailActivity, MyPlantsFragment::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+            }
+        }
     }
 
     private fun setView(plant: Plant) {

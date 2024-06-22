@@ -11,11 +11,14 @@
         android:id="@+id/tabs_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tabIndicatorColor="?attr/colorPrimary">
+        app:tabIndicatorColor="@color/bright_blue"
+        app:tabSelectedTextColor="@color/bright_blue"
+        app:tabTextColor="#5D5D5D">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -42,15 +45,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_btn_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintBottom_toTopOf="@+id/tabs_main"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/add" />
 </androidx.constraintlayout.widget.ConstraintLayout>

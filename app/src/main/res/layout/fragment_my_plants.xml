@@ -11,15 +11,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sky"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tv_title_my_plants"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginBottom="8dp"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/gabarito_bold"
             android:text="@string/my_plants"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/white"
+            android:textSize="40sp"
             app:layout_constraintBottom_toBottomOf="@+id/img_ilust_my_plants"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -33,34 +42,71 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/search_bar_my_plants"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            app:boxBackgroundColor="@color/status_background"
-            app:boxStrokeColor="@color/primary_container"
-            app:startIconDrawable="@drawable/search"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_ilust_my_plants" >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_myplants"
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/background"
+            app:layout_constraintTop_toBottomOf="@+id/img_ilust_my_plants">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/search" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_my_plants"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/search_bar_my_plants"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#FFFFFF"
+                    android:backgroundTint="#FFFFFF"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="15dp"
+                    app:boxCornerRadiusBottomStart="15dp"
+                    app:boxCornerRadiusTopEnd="15dp"
+                    app:boxCornerRadiusTopStart="15dp"
+                    app:boxStrokeColor="@color/primary"
+                    app:boxStrokeWidth="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:startIconDrawable="@drawable/search">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/search" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_my_plants"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/search_bar_my_plants" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_btn_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="#22B1ED"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_bar_my_plants" />
+            app:srcCompat="@drawable/add" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
